@@ -51,5 +51,14 @@ int findLocations(char str[], int locations[], char searchChar) {
 }
 
 int countSeqStr(char str[], char searchStr[]){
-    
+    int i;
+    int j;
+    int searchStrLength;
+    searchStrLength = strlen(searchStr);
+    for (i = 0; i < strlen(str) - searchStrLength; i++) {
+        for (j = 0; j < searchStr; j++) {
+            
+        }
+        
+    }    
 }
