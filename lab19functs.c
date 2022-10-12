@@ -8,6 +8,7 @@
 */
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include "lab19functs.h"
 
@@ -54,10 +55,29 @@ int countSeqStr(char str[], char searchStr[]){
     int i;
     int j;
     int searchStrLength;
-    searchStrLength = strlen(searchStr);
+    int count;
+    bool sequence = true;
+
+    searchStrLength = strlen(searchStr) - 1;
+    count = 0;
+
     for (i = 0; i < strlen(str) - searchStrLength; i++) {
-        for (j = 0; j < strlen(searchStr); j++) {
-           
+        sequence = true;
+        for (j = 0; j < searchStrLength + 1; j++) {
+            if (str[i+j] != searchStr[j]) {
+                sequence = false;
+                printf("str[%d+%d] = %c, searchStr[%d] = %c, letter count = %d, sequence count = %d, 1 = true, %d\n", i, j, str[i+j], j, searchStr[j], i+j, count, sequence);
+                }
+            else {
+                printf("str[%d+%d] = %c, searchStr[%d] = %c, letter count = %d, sequence count = %d, 1 = true, %d\n", i, j, str[i+j], j, searchStr[j], i+j, count, sequence);
+            }
+            if (j == (searchStrLength)) {
+                if (sequence == true) {
+                    count = count + 1;
+                }
+            }
         }
-    } 
+        printf("\n");
+    }
+    return count;
 }
