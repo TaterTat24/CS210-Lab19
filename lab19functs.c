@@ -56,9 +56,8 @@ int countSeqStr(char str[], char searchStr[]){
     int searchStrLength;
     searchStrLength = strlen(searchStr);
     for (i = 0; i < strlen(str) - searchStrLength; i++) {
-        for (j = 0; j < searchStr; j++) {
-            
+        for (j = 0; j < strlen(searchStr); j++) {
+           
         }
-        
-    }    
+    } 
 }
